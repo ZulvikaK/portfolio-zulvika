@@ -324,6 +324,46 @@
         </div>
       </section>
 
+      <section id="stack" class="py-24 relative overflow-x-hidden border-t border-b border-white/10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-950/30 via-slate-900 to-slate-950">
+        <div class="container mx-auto px-6 max-w-6xl relative z-10 reveal">
+          <div class="grid md:grid-cols-2 gap-16 md:gap-32 items-start">
+            
+            <!-- Methodology Column -->
+            <div class="space-y-10">
+              <div class="space-y-4">
+                <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Methodology</h3>
+                <p class="text-slate-400 text-sm leading-relaxed font-light max-w-md">
+                  Proven frameworks to ensure structured project delivery, effective stakeholder collaboration, and proactive risk management.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <span v-for="item in methodology" :key="item" class="px-5 py-2 bg-transparent border border-white/30 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all cursor-default">
+                  {{ item }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Tools Stack Column -->
+            <div class="space-y-10">
+              <div class="space-y-4">
+                <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Tools Stack</h3>
+                <p class="text-slate-400 text-sm leading-relaxed font-light max-w-md">
+                  Leveraging a high-performance stack to build, automate, and monitor complex AI-driven systems with precision.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <span v-for="item in toolsStack" :key="item" class="px-5 py-2 bg-transparent border border-white/30 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all cursor-default">
+                  {{ item }}
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="relative py-32 overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl relative z-10">
           <div class="text-center mb-16">
@@ -618,15 +658,31 @@ const runCounter = (index, endValue, duration = 2000, decimals = 0) => {
     window.requestAnimationFrame(step);
 }
 
+// Core Competencies (4 items)
 const skills = [
-  'AI Project Management', 
-  'Workflow Automation (n8n)', 
-  'AI Agents Development', 
-  'API System Integration', 
-  'Quality Assurance Strategy', 
-  'Risk Mitigation', 
-  'Stakeholder Alignment', 
+  'AI Project Management',
+  'Agentic AI Development',
+  'Workflow Automation (n8n)',
+  'Quality Assurance Strategy'
+]
+
+// Methodology
+const methodology = [
+  'Agile & Scrum',
+  'Stakeholder Alignment',
+  'Risk Mitigation',
   'Technical Documentation'
+]
+
+// Tools Stack
+const toolsStack = [
+  'n8n',
+  'JavaScript',
+  'Jira',
+  'Notion',
+  'Postman',
+  'Cypress',
+  'Datadog'
 ]
 
 // UPDATED DATA: Experience dengan deskripsi lengkap dan format yang benar
