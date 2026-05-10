@@ -115,6 +115,28 @@
                     Contact Me
                   </a>
                 </div>
+
+                <!-- Language Skills -->
+                <div class="mt-10 animate-fade-in-up delay-300">
+                  <h4 class="text-xs font-bold text-slate-500 uppercase tracking-[0.15em] mb-4 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                    </svg>
+                    Language Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-3">
+                    <div v-for="lang in languages" :key="lang.name" class="group/lang flex items-center gap-3 px-4 py-2.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-emerald-500/30 transition-all duration-300 cursor-default">
+                      <span class="text-lg">{{ lang.flag }}</span>
+                      <div class="flex flex-col">
+                        <span class="text-sm font-semibold text-white leading-tight">{{ lang.name }}</span>
+                        <span :class="['text-[10px] font-bold uppercase tracking-wider leading-tight', lang.level === 'Native Speaker' ? 'text-emerald-400' : 'text-teal-300/70']">{{ lang.level }}</span>
+                      </div>
+                      <div class="flex gap-0.5 ml-1">
+                        <div v-for="n in 5" :key="n" :class="['w-1.5 h-4 rounded-full transition-all duration-500', n <= lang.dots ? 'bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.6)] group-hover/lang:shadow-[0_0_10px_rgba(16,185,129,0.8)]' : 'bg-white/10']"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
 
             <div class="hidden md:block relative h-[600px] w-full animate-fade-in-up delay-500 perspective-1000">
@@ -664,6 +686,12 @@ const skills = [
   'Agentic AI Development',
   'Workflow Automation (n8n)',
   'Quality Assurance Strategy'
+]
+
+// Language Skills
+const languages = [
+  { name: 'Indonesian', level: 'Native Speaker', flag: '🇮🇩', dots: 5 },
+  { name: 'English', level: 'Medium', flag: '🇬🇧', dots: 3 }
 ]
 
 // Methodology
