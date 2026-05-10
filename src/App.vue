@@ -292,6 +292,50 @@
         </div>
       </section>
 
+      <!-- Education Section -->
+      <section id="education" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 right-0 w-[600px] h-[600px] bg-teal-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-xs font-bold tracking-[0.2em] text-emerald-500 uppercase mb-4">Background</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
+              Education <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">&amp; Degree</span>
+            </h3>
+          </div>
+
+          <div class="grid gap-6 max-w-3xl mx-auto">
+            <div v-for="(edu, index) in education" :key="index" class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-emerald-500/30 hover:bg-white/[0.08] transition-all duration-500 reveal relative overflow-hidden" :style="{ transitionDelay: `${index * 150}ms` }">
+              
+              <!-- Subtle corner glow on hover -->
+              <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+              <div class="flex items-start gap-5 md:gap-8 relative z-10">
+                <!-- Icon -->
+                <div class="shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/20 flex items-center justify-center group-hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-500">
+                  <svg v-if="edu.icon === 'academic'" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 min-w-0">
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                    <h4 class="text-xl md:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">{{ edu.institution }}</h4>
+                    <span class="text-sm font-mono text-emerald-400/70 tracking-wide shrink-0">{{ edu.period }}</span>
+                  </div>
+                  <p v-if="edu.degree" class="text-slate-300 text-sm md:text-base font-light leading-relaxed mb-3">{{ edu.degree }}</p>
+                  <p v-if="edu.field" class="text-slate-500 text-xs md:text-sm font-light italic">{{ edu.field }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="projects" class="py-32 relative">
         <div class="container mx-auto px-6 max-w-7xl">
           <div class="text-center mb-20">
@@ -692,6 +736,24 @@ const skills = [
 const languages = [
   { name: 'Indonesian', level: 'Native Speaker', flag: '🇮🇩', dots: 5 },
   { name: 'English', level: 'Medium', flag: '🇬🇧', dots: 3 }
+]
+
+// Education
+const education = [
+  {
+    institution: 'Universitas Gadjah Mada',
+    degree: 'Bachelor of Agricultural and Biosystem Engineering',
+    field: 'Postharvest and Food Engineering',
+    period: '2016 – 2020',
+    icon: 'academic'
+  },
+  {
+    institution: 'SMA Negeri 5 Yogyakarta',
+    degree: null,
+    field: null,
+    period: 'Aug 2013 – Aug 2016',
+    icon: 'school'
+  }
 ]
 
 // Methodology
